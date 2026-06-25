@@ -14,7 +14,7 @@ try:
     # List all registered model names in your database
     registered_models = client.search_registered_models()
     if not registered_models:
-        print("[⚠️ WARNING] No registered models found in mlflow.db. Your registry is completely empty!")
+        print("[WARNING] No registered models found in mlflow.db. Your registry is completely empty!")
 
     for rm in registered_models:
         print(f"\nModel Name Found: '{rm.name}'")
@@ -27,4 +27,4 @@ try:
             print(f"  -> Version {v.version} (Run ID: {v.run_id}) | Aliases: {v.aliases}")
 
 except Exception as e:
-    print(f"[💥 ERROR] Failed to read database: {str(e)}")
+    print(f"[ERROR] Failed to read database: {str(e)}")
